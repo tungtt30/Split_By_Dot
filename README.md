@@ -1,17 +1,20 @@
 # Split_By_Dot
 
-How to use
+
+How to use:
 
 
-install java (jdk)
+install java (jdk): https://www.java.com/en/download/
 
 
-open input.txt 
-write some text
+open "input.txt" and write some text.
+
 
 open terminal :
 
         javac Main.java
         java Main
 
-open output.xls and enjoy
+open "output.xls" and enjoy.
+
+Warning: close output.xls before run terminal.
