@@ -3,8 +3,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
-
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -17,6 +17,8 @@ public class Main {
 		System.out.println("Processing...");
 		Workbook workbook = new HSSFWorkbook();
 		Sheet sheet = workbook.createSheet("Output");
+		CellStyle wrapCellStyle = workbook.createCellStyle();
+		wrapCellStyle.setWrapText(true);
 		int rowNum = 1;
 		while (scanner.hasNext()) {
 			String input = scanner.nextLine();
@@ -35,9 +37,11 @@ public class Main {
 					row = sheet.createRow(rowNum);
 					cell = row.createCell(0);
 				}
+				sheet.autoSizeColumn(0);
 				rowNum = rowNum + 2;
 			}
 		}
+
 		try {
 			FileOutputStream outputStream = new FileOutputStream("output.xls");
 			workbook.write(outputStream);
