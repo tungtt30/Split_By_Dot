@@ -12,7 +12,7 @@ write some text
 open terminal :
 
         javac Main.java
-wait
+wait:
         java Main
 
 open output.xls and enjoy
